@@ -96,10 +96,10 @@ export default function ContactPage() {
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-blue-600 flex-shrink-0" />
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919323130044"
                   className="text-slate-700 dark:text-slate-300 hover:text-blue-600"
                 >
-                  +91 (0) 99999 99999
+                  +91 93231 30044
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
               <a
-                href="https://wa.me/919999999999?text=Hi%20SmartEdge%20Team%2C%20I%20want%20to%20consult%20about%20a%20project."
+                href="https://wa.me/919323130044?text=Hi%20SmartEdge%20Team%2C%20I%20want%20to%20consult%20about%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-colors shadow-xs"

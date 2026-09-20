@@ -72,7 +72,6 @@ const MEGA_MENU_ITEMS = [
 ];
 
 const NAV_LINKS = [
-  { name: "Home", href: "/" },
   { name: "Industries", href: "/industries" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "About", href: "/about" },
@@ -251,7 +250,7 @@ export function Navbar() {
 
             {/* WhatsApp Quick Link */}
             <a
-              href="https://wa.me/919999999999?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+              href="https://wa.me/919323130044?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors"
@@ -300,7 +299,7 @@ export function Navbar() {
             >
               All Services (18 Solutions) →
             </Link>
-            {NAV_LINKS.filter((l) => l.name !== "Home").map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -312,7 +311,7 @@ export function Navbar() {
             ))}
             <div className="pt-2 flex flex-col gap-2">
               <a
-                href="https://wa.me/919999999999?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                href="https://wa.me/919323130044?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-2.5 rounded-xl text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800"

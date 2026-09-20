@@ -33,6 +33,8 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { ProjectModal } from "@/components/project-modal";
+import { HeroCarousel } from "@/components/hero-carousel";
+import { ClientMarquee } from "@/components/client-marquee";
 import { SERVICES, INDUSTRIES, STATS, FAQS } from "@/data/services-data";
 
 const INDUSTRY_MARQUEE = [
@@ -154,101 +156,125 @@ export default function HomePage() {
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-60 pointer-events-none" />
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
-          {/* Positioning Biscuit Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 dark:border-blue-900/60 bg-blue-50/80 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-semibold shadow-xs"
-          >
-            <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span>Technology Solutions Built for Business Growth</span>
-          </motion.div>
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Hero Text & Actions (Image 2) */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              {/* Positioning Biscuit Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-200/80 dark:border-cyan-900/60 bg-cyan-50/80 dark:bg-cyan-950/40 text-cyan-800 dark:text-cyan-300 text-xs sm:text-sm font-semibold shadow-xs"
+              >
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
+                <span>YOUR NEXT STAGE OF GROWTH STARTS HERE</span>
+              </motion.div>
 
-          {/* Hero Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1] max-w-4xl mx-auto"
-          >
-            Websites, Software &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400">
-              Digital Solutions
-            </span>{" "}
-            Built to Grow Your Business
-          </motion.h1>
+              {/* Hero Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-4xl sm:text-6xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08]"
+              >
+                Great businesses deserve a{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 dark:from-blue-400 dark:via-indigo-400 dark:to-cyan-400">
+                  smarter edge.
+                </span>
+              </motion.h1>
 
-          {/* Supporting line */}
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
-          >
-            SmartEdge Business Solutions helps businesses build powerful websites, custom software, automated workflows, and digital growth strategies.
-          </motion.p>
+              {/* Sub-headline */}
+              <motion.h2
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+                className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-200"
+              >
+                Websites, software & digital solutions built to grow your business.
+              </motion.h2>
 
-          {/* CTAs: Primary, Secondary, Third option */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2"
-          >
-            {/* Primary CTA */}
-            <button
-              type="button"
-              onClick={() => openModalWith("Website Development")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-200 active:scale-95"
-            >
-              <span>Start Your Project</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              {/* Supporting line */}
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl"
+              >
+                From your first website to your next big idea. We build the technology, automate the work, and help your business move forward.
+              </motion.p>
 
-            {/* Secondary CTA */}
-            <button
-              type="button"
-              onClick={() => openModalWith("Consultation")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl text-sm sm:text-base font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-sm transition-all duration-200"
-            >
-              <Clock className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-              <span>Book Free Consultation</span>
-            </button>
+              {/* CTAs: Primary, Secondary, WhatsApp */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex flex-wrap items-center gap-3 pt-2"
+              >
+                {/* Primary CTA */}
+                <button
+                  type="button"
+                  onClick={() => openModalWith("Website Development")}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25 hover:shadow-xl transition-all duration-200 active:scale-95"
+                >
+                  <span>Start Your Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
-            {/* Third Option: WhatsApp Us */}
-            <a
-              href="https://wa.me/919999999999?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-sm sm:text-base font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors"
-            >
-              <MessageSquare className="w-4 h-4 fill-emerald-600 text-emerald-600 dark:fill-emerald-400 dark:text-emerald-400" />
-              <span>WhatsApp Us</span>
-            </a>
-          </motion.div>
+                {/* Secondary CTA */}
+                <button
+                  type="button"
+                  onClick={() => openModalWith("Consultation")}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 shadow-sm transition-all duration-200"
+                >
+                  <span>Book Free Consultation</span>
+                  <ArrowRight className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                </button>
 
-          {/* Trust proof metrics banner */}
-          <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto border-t border-slate-200/80 dark:border-slate-800/80">
-            {STATS.map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-xl sm:text-2xl font-extrabold text-blue-600 dark:text-blue-400">
-                  {stat.value}
-                </p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">
-                  {stat.label}
-                </p>
+                {/* WhatsApp Us */}
+                <a
+                  href="https://wa.me/919323130044?text=Hi%20SmartEdge%20Team%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300 dark:border-emerald-800 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4 fill-emerald-600 text-emerald-600 dark:fill-emerald-400 dark:text-emerald-400" />
+                  <span>WhatsApp Us</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
+                </a>
+              </motion.div>
+
+              {/* Trust proof checkmarks (Image 2 bottom left) */}
+              <div className="pt-3 flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                  Business-first thinking
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                  Built for what's next
+                </span>
               </div>
-            ))}
+            </div>
+
+            {/* Right Column: Dynamic Interactive Hero Carousel (Image 2) */}
+            <div className="lg:col-span-5 pt-6 lg:pt-0">
+              <HeroCarousel />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* 2. CLIENT LOGOS / INDUSTRIES SERVED MARQUEE */}
+      {/* 2. CLIENT PORTFOLIO LOGO MARQUEE (IMAGE 1) */}
       {/* ---------------------------------------------------------------- */}
-      <section className="py-10 bg-slate-100/70 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+      <ClientMarquee />
+
+      {/* ---------------------------------------------------------------- */}
+      {/* 3. INDUSTRY MARQUEE (IMAGE 3) */}
+      {/* ---------------------------------------------------------------- */}
+      <section className="py-10 bg-slate-100/70 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">
             Trusted by Leaders Across High-Growth Industries
@@ -1014,7 +1040,7 @@ export default function HomePage() {
               </button>
 
               <a
-                href="https://wa.me/919999999999?text=Hi%20SmartEdge%20Team%2C%20I%20want%20to%20start%20a%20project."
+                href="https://wa.me/919323130044?text=Hi%20SmartEdge%20Team%2C%20I%20want%20to%20start%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base transition-colors"

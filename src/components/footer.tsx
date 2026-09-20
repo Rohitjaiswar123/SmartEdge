@@ -157,13 +157,13 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="tel:+919999999999" className="hover:text-blue-400 transition-colors">
-                  +91 (0) 99999 99999
+                <a href="tel:+919323130044" className="hover:text-blue-400 transition-colors">
+                  +91 93231 30044
                 </a>
               </div>
               <div className="pt-2">
                 <a
-                  href="https://wa.me/919999999999?text=Hello%20SmartEdge%20Team%2C%20I%20would%20like%20to%20schedule%20a%20free%20consultation."
+                  href="https://wa.me/919323130044?text=Hello%20SmartEdge%20Team%2C%20I%20would%20like%20to%20schedule%20a%20free%20consultation."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-colors"

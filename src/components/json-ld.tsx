@@ -12,7 +12,7 @@ export function JsonLd() {
     description:
       "Technology, Software, Automation & Digital Growth Company providing Website Development, Custom Software Development, Google Business Profile Optimization, and AI Automation.",
     slogan: "Build. Innovate. Grow.",
-    telephone: "+91-9999999999",
+    telephone: "+91-9323130044",
     email: "contact@smartedgebusiness.com",
     address: {
       "@type": "PostalAddress",
