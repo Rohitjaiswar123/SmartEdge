@@ -7,54 +7,25 @@ const CLIENTS = [
     name: "Al Madinah Dental & Cosmetology Care",
     isDark: false,
     logo: (
-      <div className="flex flex-col items-center justify-center">
-        <div className="flex items-center gap-1">
-          <svg className="w-10 h-10 text-blue-600" viewBox="0 0 100 100" fill="none">
-            <path
-              d="M50 15C30 15 20 30 20 45C20 65 35 85 45 90C47 91 50 88 50 85C50 75 42 65 42 50C42 35 52 25 65 25C78 25 85 35 85 45C85 55 78 68 70 75C75 70 80 58 80 48C80 32 68 15 50 15Z"
-              fill="url(#goldGradient)"
-            />
-            <path
-              d="M30 35C25 45 25 55 35 65C40 70 48 78 50 82C48 72 45 60 40 50C36 42 32 38 30 35Z"
-              fill="#2563EB"
-            />
-            <defs>
-              <linearGradient id="goldGradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#EAB308" />
-                <stop offset="100%" stopColor="#CA8A04" />
-              </linearGradient>
-            </defs>
-          </svg>
-          <div className="text-left">
-            <span className="block text-sm font-extrabold text-blue-900 dark:text-blue-200 tracking-tight leading-none">
-              Al Madinah
-            </span>
-            <span className="block text-[8px] font-bold text-amber-600 tracking-wider uppercase">
-              Dental & Cosmetology Care
-            </span>
-          </div>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-100 dark:border-slate-800 w-full h-full">
+        <img
+          src="/logos/al-madinah.png"
+          alt="Al Madinah Dental & Cosmetology Care"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain"
+        />
       </div>
     ),
   },
   {
-    name: "Dr. Mandhani ENT Hospital",
+    name: "Dr. Mandhani Thane ENT Hospital",
     isDark: false,
     logo: (
-      <div className="flex flex-col items-center justify-center space-y-1">
-        <div className="relative w-10 h-10 bg-red-600 rounded-sm flex items-center justify-center">
-          <div className="w-2.5 h-7 bg-white absolute" />
-          <div className="w-7 h-2.5 bg-white absolute" />
-          <div className="relative z-10 w-4 h-4 rounded-full border-2 border-red-600 bg-white flex items-center justify-center text-[7px] font-bold text-red-600">
-            ENT
-          </div>
-        </div>
-        <div className="text-center">
-          <p className="text-[9px] font-extrabold tracking-widest text-slate-800 dark:text-slate-200 uppercase leading-tight">
-            THANE ENT
-          </p>
-          <p className="text-[7px] font-bold text-red-600 tracking-tight">DR. MANDHANI</p>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-100 dark:border-slate-800 w-full h-full">
+        <img
+          src="/logos/thane-ent.png"
+          alt="Thane ENT Dr. Mandhani"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain"
+        />
       </div>
     ),
   },
@@ -62,24 +33,25 @@ const CLIENTS = [
     name: "National Towing Service",
     isDark: false,
     logo: (
-      <div className="flex flex-col items-center justify-center">
-        <div className="w-12 h-10 border-2 border-slate-700 dark:border-slate-300 rounded-b-xl flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-800 p-1">
-          <span className="text-[7px] font-black text-red-600 tracking-widest uppercase">NATIONAL</span>
-          <span className="text-[6px] font-bold text-blue-800 dark:text-blue-300 uppercase">TOWING SERVICE</span>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-100 dark:border-slate-800 w-full h-full">
+        <img
+          src="/logos/national-towing.jpg"
+          alt="National Towing Service"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain rounded-md"
+        />
       </div>
     ),
   },
   {
-    name: "OK Agencies",
+    name: "K|A Agencies",
     isDark: false,
     logo: (
-      <div className="flex items-center justify-center">
-        <div className="w-11 h-11 rounded-full border-2 border-blue-600 dark:border-blue-400 flex items-center justify-center">
-          <span className="text-xs font-black text-blue-800 dark:text-blue-300 tracking-tighter">
-            K ↑ A
-          </span>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-100 dark:border-slate-800 w-full h-full">
+        <img
+          src="/logos/ka-agencies.png"
+          alt="K|A Agencies"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain"
+        />
       </div>
     ),
   },
@@ -87,12 +59,12 @@ const CLIENTS = [
     name: "Calyx",
     isDark: true,
     logo: (
-      <div className="flex items-center justify-center w-full h-full py-1">
-        <div className="bg-black px-4 py-2 border border-slate-700">
-          <span className="text-base font-serif font-bold text-white tracking-[0.25em]">
-            CALYX
-          </span>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-black rounded-xl shadow-xs border border-slate-800 w-full h-full">
+        <img
+          src="/logos/calyx.png"
+          alt="Calyx"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain"
+        />
       </div>
     ),
   },
@@ -100,22 +72,18 @@ const CLIENTS = [
     name: "Aditya Vardhan Hospital",
     isDark: false,
     logo: (
-      <div className="flex flex-col items-center justify-center">
-        <div className="w-11 h-11 rounded-full border-2 border-teal-600 flex items-center justify-center bg-emerald-50 dark:bg-emerald-950/60 p-1">
-          <div className="text-center">
-            <span className="block text-[6px] font-extrabold text-teal-800 dark:text-teal-300 leading-tight">
-              ADITYAVARDHAN
-            </span>
-            <span className="block text-[8px] text-red-600 font-bold">+</span>
-          </div>
-        </div>
+      <div className="flex items-center justify-center p-2 bg-white rounded-xl shadow-xs border border-slate-100 dark:border-slate-800 w-full h-full">
+        <img
+          src="/logos/adityavardhan.jpg"
+          alt="Aditya Vardhan Hospital"
+          className="max-h-20 max-w-[170px] w-auto h-auto object-contain rounded-md"
+        />
       </div>
     ),
   },
 ];
 
 export function ClientMarquee() {
-  // Duplicate array to enable smooth infinite loop
   const doubleClients = [...CLIENTS, ...CLIENTS, ...CLIENTS];
 
   return (

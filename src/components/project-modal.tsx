@@ -41,7 +41,9 @@ const TIMELINE_OPTIONS = [
 
 export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalProps) {
   const [step, setStep] = React.useState(1);
-  const [selectedService, setSelectedService] = React.useState(initialService || "Website Development");
+  const [selectedServices, setSelectedServices] = React.useState<string[]>(
+    initialService ? [initialService] : ["Website Development"]
+  );
   const [selectedBudget, setSelectedBudget] = React.useState(BUDGET_OPTIONS[1]);
   const [selectedTimeline, setSelectedTimeline] = React.useState(TIMELINE_OPTIONS[0]);
   const [formData, setFormData] = React.useState({
@@ -56,9 +58,20 @@ export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalPr
 
   React.useEffect(() => {
     if (initialService) {
-      setSelectedService(initialService);
+      setSelectedServices([initialService]);
     }
   }, [initialService]);
+
+  const toggleService = (svc: string) => {
+    setSelectedServices((prev) => {
+      if (prev.includes(svc)) {
+        // Prevent unselecting all services; keep at least one
+        return prev.length > 1 ? prev.filter((s) => s !== svc) : prev;
+      } else {
+        return [...prev, svc];
+      }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,7 +83,8 @@ export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalPr
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          service: selectedService,
+          services: selectedServices,
+          service: selectedServices.join(", "),
           budget: selectedBudget,
           timeline: selectedTimeline,
           type: "project_inquiry",
@@ -146,7 +160,7 @@ export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalPr
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                   {step === 1
-                    ? "Select your core requirements to help our engineering team prepare your project blueprint."
+                    ? "Select one or multiple services to help our engineering team prepare your blueprint."
                     : "Share your details and our technical architect will respond within 4 business hours."}
                 </p>
               </div>
@@ -155,27 +169,35 @@ export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalPr
                 <div className="space-y-6">
                   {/* Service selection */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">
-                      Select Primary Service
-                    </label>
+                    <div className="flex items-center justify-between mb-2.5">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                        Select Services <span className="text-slate-400 dark:text-slate-500 font-normal normal-case">(Select all that apply)</span>
+                      </label>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                        {selectedServices.length} Selected
+                      </span>
+                    </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {SERVICE_OPTIONS.map((svc) => (
-                        <button
-                          key={svc}
-                          type="button"
-                          onClick={() => setSelectedService(svc)}
-                          className={`text-left text-xs sm:text-sm font-medium p-3 rounded-xl border transition-all duration-150 flex items-center justify-between ${
-                            selectedService === svc
-                              ? "border-blue-600 bg-blue-50/70 text-blue-700 dark:border-blue-500 dark:bg-blue-950/50 dark:text-blue-300 font-semibold"
-                              : "border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700"
-                          }`}
-                        >
-                          <span>{svc}</span>
-                          {selectedService === svc && (
-                            <CheckCircle2 className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 ml-1.5" />
-                          )}
-                        </button>
-                      ))}
+                      {SERVICE_OPTIONS.map((svc) => {
+                        const isSelected = selectedServices.includes(svc);
+                        return (
+                          <button
+                            key={svc}
+                            type="button"
+                            onClick={() => toggleService(svc)}
+                            className={`text-left text-xs sm:text-sm font-medium p-3 rounded-xl border transition-all duration-150 flex items-center justify-between ${
+                              isSelected
+                                ? "border-blue-600 bg-blue-50/70 text-blue-700 dark:border-blue-500 dark:bg-blue-950/50 dark:text-blue-300 font-semibold shadow-xs"
+                                : "border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700"
+                            }`}
+                          >
+                            <span>{svc}</span>
+                            {isSelected && (
+                              <CheckCircle2 className="w-4 h-4 text-blue-600 dark:text-blue-400 flex-shrink-0 ml-1.5" />
+                            )}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
@@ -332,7 +354,7 @@ export function ProjectModal({ isOpen, onClose, initialService }: ProjectModalPr
                 Project Blueprint Request Received!
               </h3>
               <p className="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-sm leading-relaxed">
-                Thank you, <span className="font-semibold text-slate-900 dark:text-white">{formData.name || "friend"}</span>. Our technical leadership team will analyze your requirements for <span className="font-semibold text-blue-600 dark:text-blue-400">{selectedService}</span> and reach out within 4 business hours.
+                Thank you, <span className="font-semibold text-slate-900 dark:text-white">{formData.name || "friend"}</span>. Our technical leadership team will analyze your requirements for <span className="font-semibold text-blue-600 dark:text-blue-400">{selectedServices.join(", ")}</span> and reach out within 4 business hours.
               </p>
               <div className="pt-4 flex justify-center">
                 <button

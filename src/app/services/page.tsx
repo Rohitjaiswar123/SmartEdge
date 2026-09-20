@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { ProjectModal } from "@/components/project-modal";
+import { ServiceItemIcon } from "@/components/service-icon";
 import { SERVICES, ServiceItem } from "@/data/services-data";
 
 const CATEGORIES = [
@@ -117,9 +118,14 @@ export default function ServicesPage() {
               >
                 <div>
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
-                    <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                      Service #{svc.number}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                        <ServiceItemIcon name={svc.title} className="w-4 h-4" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                        Service #{svc.number}
+                      </span>
+                    </div>
                     {svc.badge && (
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">
                         {svc.badge}
@@ -145,7 +151,7 @@ export default function ServicesPage() {
                           key={sIdx}
                           className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                          <ServiceItemIcon name={sub} className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
                           <span className="truncate">{sub}</span>
                         </div>
                       ))}

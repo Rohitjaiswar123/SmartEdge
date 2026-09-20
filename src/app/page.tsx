@@ -35,6 +35,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { ProjectModal } from "@/components/project-modal";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { ClientMarquee } from "@/components/client-marquee";
+import { ServiceItemIcon } from "@/components/service-icon";
 import { SERVICES, INDUSTRIES, STATS, FAQS } from "@/data/services-data";
 
 const INDUSTRY_MARQUEE = [
@@ -105,21 +106,51 @@ const PROCESS_STEPS = [
 
 const TESTIMONIALS = [
   {
-    name: "Dr. Arvind Mehta",
-    role: "Director, Metro Care Clinics",
-    text: "SmartEdge completely transformed our patient acquisition. Not only did they build our custom appointment portal, but our clinic is now ranking #1 on Google Maps across 5 key specialties. Phone inquiries tripled within two months.",
+    name: "Dr. Mandhani",
+    role: "Director & Chief Surgeon, Thane ENT Hospital",
+    company: "Thane ENT Hospital",
+    logo: "/logos/thane-ent.png",
+    text: "SmartEdge completely transformed our hospital's digital presence and patient booking workflow. Their Google Business Profile optimization put our ENT clinic at the top of local search, resulting in a 3x surge in patient appointments.",
     rating: 5,
   },
   {
-    name: "Vikram Singhania",
-    role: "Managing Partner, Singhania Logistics",
-    text: "Unlike marketing agencies who talk in vague buzzwords, SmartEdge delivered hard software and automation that cut our daily dispatch overhead by 60%. Their custom dashboards are indispensable for our team.",
+    name: "Operations Team",
+    role: "Director, National Towing Service",
+    company: "National Towing Service",
+    logo: "/logos/national-towing.jpg",
+    text: "SmartEdge engineered our automated dispatch system and local search acquisition engine. Incoming customer towing requests are processed seamlessly, cutting response times drastically.",
     rating: 5,
   },
   {
-    name: "Ananya Deshmukh",
-    role: "Founder, Bloom Organics",
-    text: "Our previous website took 6 seconds to load and dropped sales constantly. SmartEdge rebuilt our store on modern Next.js architecture with instant WhatsApp checkout. Our conversion rate surged immediately.",
+    name: "Dr. Al-Madinah",
+    role: "Chief Medical Officer, Al Madinah Dental & Cosmetology",
+    company: "Al Madinah Dental & Cosmetology Care",
+    logo: "/logos/al-madinah.png",
+    text: "The web application and custom lead funnels designed by SmartEdge exceeded all our expectations. Our patient inquiries for dental and cosmetology care have grown consistently month over month.",
+    rating: 5,
+  },
+  {
+    name: "Aditya Vardhan Board",
+    role: "Director, Aditya Vardhan Hospital & Trauma Centre",
+    company: "Aditya Vardhan Hospital",
+    logo: "/logos/adityavardhan.jpg",
+    text: "SmartEdge developed a reliable digital portal and optimized our emergency search visibility. Their engineering team is extremely professional, efficient, and technically proficient.",
+    rating: 5,
+  },
+  {
+    name: "Calyx Brand Director",
+    role: "Managing Director, Calyx",
+    company: "Calyx",
+    logo: "/logos/calyx.png",
+    text: "SmartEdge rebuilt our digital platform using Next.js with lightning fast page loads. The sleek UI design and seamless conversion flows elevated our brand authority immediately.",
+    rating: 5,
+  },
+  {
+    name: "K|A Leadership",
+    role: "Managing Partner, K|A Agencies",
+    company: "K|A Agencies",
+    logo: "/logos/ka-agencies.png",
+    text: "From custom management software to local search dominance, SmartEdge has been an invaluable technology partner for our operations and growth strategy.",
     rating: 5,
   },
 ];
@@ -158,7 +189,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column: Hero Text & Actions (Image 2) */}
+            {/* Left Column: Hero Text & Actions */}
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Positioning Biscuit Badge */}
               <motion.div
@@ -258,7 +289,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Dynamic Interactive Hero Carousel (Image 2) */}
+            {/* Right Column: Hero Carousel */}
             <div className="lg:col-span-5 pt-6 lg:pt-0">
               <HeroCarousel />
             </div>
@@ -267,12 +298,12 @@ export default function HomePage() {
       </section>
 
       {/* ---------------------------------------------------------------- */}
-      {/* 2. CLIENT PORTFOLIO LOGO MARQUEE (IMAGE 1) */}
+      {/* 2. CLIENT PORTFOLIO LOGO MARQUEE */}
       {/* ---------------------------------------------------------------- */}
       <ClientMarquee />
 
       {/* ---------------------------------------------------------------- */}
-      {/* 3. INDUSTRY MARQUEE (IMAGE 3) */}
+      {/* 3. INDUSTRY MARQUEE */}
       {/* ---------------------------------------------------------------- */}
       <section className="py-10 bg-slate-100/70 dark:bg-slate-900/40 border-b border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 text-center">
@@ -342,7 +373,7 @@ export default function HomePage() {
                       key={idx}
                       className="flex items-center gap-2 p-2 rounded-lg bg-white/80 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700/60 text-xs font-medium text-slate-800 dark:text-slate-200 shadow-xs"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                      <ServiceItemIcon name={item} className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 flex-shrink-0" />
                       <span className="truncate">{item}</span>
                     </div>
                   ))}
@@ -442,7 +473,7 @@ export default function HomePage() {
             <GlowingCard key={sIdx} className="hover:-translate-y-1 transition-transform">
               <div className="flex items-start gap-3">
                 <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
-                  <Code2 className="w-4 h-4" />
+                  <ServiceItemIcon name={softwareItem} className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 dark:text-white">
@@ -507,37 +538,48 @@ export default function HomePage() {
 
         {/* GBP Strategy Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <GlowingCard className="lg:col-span-2 space-y-6">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
-              15-Point Local Maps Domination Playbook
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <GlowingCard className="lg:col-span-2 space-y-8 p-6 sm:p-8">
+            <div className="space-y-2.5 pb-4 border-b border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5">
+                  <Star className="w-5 h-5 text-amber-500 fill-amber-500 shrink-0" />
+                  <span>15-Point Local Maps Domination Playbook</span>
+                </h3>
+                <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20">
+                  15 Action Items
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                A systematic framework designed to maximize local visibility and push your business into the top 3 Google map pack.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
               {tertiaryService.items.map((gbpItem, gIdx) => (
                 <div
                   key={gIdx}
-                  className="flex items-center gap-2 p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-200"
+                  className="flex items-start gap-2.5 p-3 sm:p-3.5 rounded-xl bg-slate-50/80 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:border-amber-500/40 transition-colors shadow-xs"
                 >
-                  <Check className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
-                  <span className="truncate">{gbpItem}</span>
+                  <ServiceItemIcon name={gbpItem} className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+                  <span className="leading-snug text-slate-800 dark:text-slate-200 break-words">{gbpItem}</span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50">
+            <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 space-y-1">
                 <p className="text-xs font-bold text-amber-800 dark:text-amber-300">
                   Google Map Pack Top 3 Guarantee Focus
                 </p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                   We reverse-engineer top ranking local competitors, injecting primary geo-keywords and schema markup.
                 </p>
               </div>
-              <div className="p-4 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50">
+              <div className="p-4.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50 space-y-1">
                 <p className="text-xs font-bold text-emerald-800 dark:text-emerald-300">
                   Automated Review Acceleration
                 </p>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                   Custom WhatsApp & SMS triggers that collect genuine 5-star Google reviews from satisfied customers.
                 </p>
               </div>
@@ -691,10 +733,15 @@ export default function HomePage() {
           {otherServices.map((svc) => (
             <GlowingCard key={svc.id} className="flex flex-col justify-between">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-                  Service #{svc.number}
-                </span>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white mt-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                    Service #{svc.number}
+                  </span>
+                  <div className="w-7 h-7 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                    <ServiceItemIcon name={svc.title} className="w-4 h-4" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white mt-2">
                   {svc.title}
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
@@ -704,9 +751,10 @@ export default function HomePage() {
                   {svc.items.slice(0, 4).map((sub, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                      className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
-                      {sub}
+                      <ServiceItemIcon name={sub} className="w-3 h-3 text-blue-600 dark:text-blue-400 flex-shrink-0" />
+                      <span>{sub}</span>
                     </span>
                   ))}
                 </div>
@@ -925,14 +973,23 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TESTIMONIALS.map((t, idx) => (
-            <GlowingCard key={idx} className="flex flex-col justify-between">
+            <GlowingCard key={idx} className="flex flex-col justify-between hover:-translate-y-1 transition-transform">
               <div>
-                <div className="flex items-center gap-1 text-amber-400 mb-4">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
+                  <div className="h-10 px-2.5 py-1 bg-white rounded-lg border border-slate-200/80 shadow-xs flex items-center justify-center">
+                    <img
+                      src={t.logo}
+                      alt={t.company}
+                      className="h-8 max-w-[130px] w-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex items-center gap-1 text-amber-400">
+                    {[...Array(t.rating)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
                   &ldquo;{t.text}&rdquo;
@@ -940,7 +997,7 @@ export default function HomePage() {
               </div>
 
               <div className="pt-6 border-t border-slate-100 dark:border-slate-800 mt-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 font-bold flex items-center justify-center text-xs">
+                <div className="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 font-bold flex items-center justify-center text-xs flex-shrink-0">
                   {t.name[0]}
                 </div>
                 <div>

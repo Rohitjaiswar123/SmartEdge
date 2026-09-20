@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { ProjectModal } from "./project-modal";
+import { ServiceItemIcon } from "./service-icon";
 
 const MEGA_MENU_ITEMS = [
   {
@@ -119,16 +120,12 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Code2 className="w-5 h-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white leading-tight">
-                Smart<span className="text-blue-600 dark:text-blue-400">Edge</span>
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 -mt-0.5">
-                Business Solutions
-              </span>
+            <div className="bg-white p-1 sm:p-1.5 rounded-xl border border-slate-200/80 dark:border-slate-700/80 shadow-sm group-hover:scale-105 transition-transform duration-200 flex items-center justify-center">
+              <img
+                src="/logos/smartedge-logo.jpg"
+                alt="SmartEdge Business Solutions Logo"
+                className="h-8 sm:h-9 w-auto object-contain rounded-md"
+              />
             </div>
           </Link>
 
@@ -195,12 +192,15 @@ export function Navbar() {
                                   onClick={() => setServicesOpen(false)}
                                   className="group flex flex-col p-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
                                 >
-                                  <div className="flex items-center justify-between">
-                                    <span className="text-xs font-medium text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                      {item.name}
-                                    </span>
+                                  <div className="flex items-center justify-between gap-2">
+                                    <div className="flex items-center gap-2 min-w-0">
+                                      <ServiceItemIcon name={item.name} className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-shrink-0" />
+                                      <span className="text-xs font-medium text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                                        {item.name}
+                                      </span>
+                                    </div>
                                     {item.badge && (
-                                      <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">
+                                      <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 flex-shrink-0">
                                         {item.badge}
                                       </span>
                                     )}
