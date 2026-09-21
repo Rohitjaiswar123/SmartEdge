@@ -166,7 +166,7 @@ export default function HomePage() {
               </button>
 
               <a
-                href="https://wa.me/919987827828?text=Hi%20SmartEdge,%20I'd%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/919323130044?text=Hi%20SmartEdge,%20I'd%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3.5 rounded-xl border border-slate-700/80 hover:border-emerald-500/50 bg-slate-900/60 hover:bg-emerald-950/20 text-slate-200 hover:text-emerald-400 font-semibold text-sm sm:text-base transition-all flex items-center gap-2"
