@@ -4,6 +4,7 @@ import * as React from "react";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { BookOpen, ArrowRight, Clock, Tag } from "lucide-react";
 import { ProjectModal } from "@/components/project-modal";
+import { AmbientLighting } from "@/components/ui/ambient-lighting";
 
 const POSTS = [
   {
@@ -44,7 +45,8 @@ export default function InsightsPage() {
   const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <div className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <AmbientLighting variant="section" intensity="subtle" />
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
           <BookOpen className="w-3.5 h-3.5" /> Engineering & Growth Insights

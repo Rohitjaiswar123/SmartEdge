@@ -18,6 +18,7 @@ import {
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { ProjectModal } from "@/components/project-modal";
 import { ServiceItemIcon } from "@/components/service-icon";
+import { AmbientLighting } from "@/components/ui/ambient-lighting";
 import { SERVICES, ServiceItem } from "@/data/services-data";
 
 const CATEGORIES = [
@@ -53,7 +54,8 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <div className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <AmbientLighting variant="section" intensity="subtle" />
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">

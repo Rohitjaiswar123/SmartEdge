@@ -84,6 +84,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { AmbientLighting } from "@/components/ui/ambient-lighting";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -94,15 +96,16 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-screen flex flex-col font-sans antialiased bg-slate-50 dark:bg-[#080c14] text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white transition-colors duration-300">
+      <body className="min-h-screen flex flex-col font-sans antialiased bg-slate-50 dark:bg-[#080c14] text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white transition-colors duration-300 relative overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange={false}
         >
+          <AmbientLighting variant="fixed" intensity="subtle" />
           <Navbar />
-          <main className="flex-1 pt-20 sm:pt-24">{children}</main>
+          <main className="flex-1 pt-20 sm:pt-24 relative z-10">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

@@ -5,13 +5,15 @@ import { INDUSTRIES } from "@/data/services-data";
 import { GlowingCard } from "@/components/ui/glowing-card";
 import { CheckCircle2, ArrowRight, Compass, Sparkles } from "lucide-react";
 import { ProjectModal } from "@/components/project-modal";
+import { AmbientLighting } from "@/components/ui/ambient-lighting";
 
 export default function IndustriesPage() {
   const [modalOpen, setModalOpen] = React.useState(false);
   const [selectedIndustry, setSelectedIndustry] = React.useState("Healthcare");
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <div className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <AmbientLighting variant="section" intensity="subtle" />
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
           <Compass className="w-3.5 h-3.5" /> Industry Architecture

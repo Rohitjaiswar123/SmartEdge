@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { GlowingCard } from "@/components/ui/glowing-card";
+import { AmbientLighting } from "@/components/ui/ambient-lighting";
 import {
   Mail,
   Phone,
@@ -53,7 +54,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+    <div className="relative py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+      <AmbientLighting variant="section" intensity="subtle" />
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
           <MessageSquare className="w-3.5 h-3.5" /> Direct Consultation
