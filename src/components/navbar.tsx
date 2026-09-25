@@ -136,7 +136,7 @@ export function Navbar() {
               className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
                 pathname === "/"
                   ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 font-semibold"
-                  : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
+                  : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-600 dark:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
               }`}
             >
               Home
@@ -154,7 +154,7 @@ export function Navbar() {
                 className={`flex items-center gap-1 px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
                   servicesOpen || pathname.startsWith("/services")
                     ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 font-semibold"
-                    : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
+                    : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-600 dark:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
                 }`}
                 aria-expanded={servicesOpen}
               >
@@ -194,8 +194,8 @@ export function Navbar() {
                                 >
                                   <div className="flex items-center justify-between gap-2">
                                     <div className="flex items-center gap-2 min-w-0">
-                                      <ServiceItemIcon name={item.name} className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex-shrink-0" />
-                                      <span className="text-xs font-medium text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                                      <ServiceItemIcon name={item.name} className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-600 dark:text-blue-400 transition-colors flex-shrink-0" />
+                                      <span className="text-xs font-medium text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-600 dark:text-blue-400 transition-colors truncate">
                                         {item.name}
                                       </span>
                                     </div>
@@ -236,7 +236,7 @@ export function Navbar() {
                 className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
                   pathname === link.href
                     ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/50 font-semibold"
-                    : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
+                    : "text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-600 dark:text-blue-400 hover:bg-slate-100/70 dark:hover:bg-slate-800/50"
                 }`}
               >
                 {link.name}

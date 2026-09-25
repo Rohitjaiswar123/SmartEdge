@@ -43,18 +43,18 @@ const SLIDES = [
         </motion.div>
 
         {/* Main Workspace Card */}
-        <div className="bg-slate-900 text-white p-5 rounded-2xl border border-slate-800 shadow-xl space-y-3">
+        <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="p-1.5 rounded-lg bg-blue-600/30 text-blue-400">
+              <div className="p-1.5 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
                 <Code2 className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-white">Your business, upgraded.</h4>
-                <p className="text-[11px] text-slate-400">One connected digital ecosystem.</p>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white">Your business, upgraded.</h4>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">One connected digital ecosystem.</p>
               </div>
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
               Connected
             </span>
           </div>
@@ -150,11 +150,11 @@ const SLIDES = [
           </div>
 
           <div className="p-3.5 rounded-xl bg-[#0b233a] text-white border border-slate-800 shadow-xs space-y-1">
-            <div className="flex items-center gap-1.5 text-cyan-400">
+            <div className="flex items-center gap-1.5 text-cyan-600 dark:text-cyan-400">
               <Sparkles className="w-4 h-4" />
               <span className="text-xs font-serif font-bold text-white tracking-widest truncate">CALYX</span>
             </div>
-            <p className="text-[11px] font-bold text-cyan-300">B2B E-Commerce</p>
+            <p className="text-[11px] font-bold text-cyan-600 dark:text-cyan-300">B2B E-Commerce</p>
             <p className="text-[10px] text-slate-300">Custom Web Suite</p>
           </div>
         </div>
@@ -216,16 +216,16 @@ const SLIDES = [
         <div className="p-4 rounded-2xl bg-emerald-950/90 text-white border border-emerald-800 shadow-md space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <MessageSquare className="w-4 h-4 text-emerald-400 fill-emerald-400" />
+              <MessageSquare className="w-4 h-4 text-emerald-600 dark:text-emerald-400 fill-emerald-400" />
               <span className="text-xs font-bold text-white">Official WhatsApp API</span>
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 border border-emerald-500/40">
               24/7 Active
             </span>
           </div>
 
           <div className="p-2.5 rounded-xl bg-emerald-900/60 border border-emerald-700/50 space-y-1.5 text-xs">
-            <div className="flex items-center justify-between text-[11px] text-emerald-300">
+            <div className="flex items-center justify-between text-[11px] text-emerald-600 dark:text-emerald-300">
               <span>Instant Lead Response</span>
               <span className="font-bold text-white">&lt; 30 seconds</span>
             </div>

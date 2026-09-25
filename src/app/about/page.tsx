@@ -160,7 +160,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA Box */}
-      <div className="p-8 rounded-3xl bg-slate-900 text-white text-center space-y-4 max-w-3xl mx-auto">
+      <div className="p-8 rounded-3xl bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white text-center space-y-4 max-w-3xl mx-auto">
         <h3 className="text-2xl font-bold">
           Partner with Your Technology & Digital Growth Ally
         </h3>

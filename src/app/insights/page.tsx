@@ -86,7 +86,7 @@ export default function InsightsPage() {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-600 dark:text-blue-300"
               >
                 <span>Read Full Guide</span>
                 <ArrowRight className="w-3.5 h-3.5" />
